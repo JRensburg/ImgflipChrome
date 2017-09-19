@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+  <head>
+    <title>MayMays!</title>
+    <script src="jquery-3.1.0.min.js"></script>
+    <script src="popup.js"></script>
+  </head>
+  <body>
+    <h1>Generate a meme</h1>
+    <select>
+      <option value="Boromir">Boromir</option>
+    </select>
+    <input type="text" id="text1"
+    <button type="button" id="generate">Generate your maymay</button>
+    <form>
+    <input type="text" id="output" val="Your meme">
+    </form>
+  </body>
+</html>

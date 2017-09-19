@@ -1,0 +1,26 @@
+$(document).ready(function(){
+    $('#generate').click(function(){
+	
+	var resultDiv =$("#resultDivContainer");
+	$.ajax({
+	    url: "https://api.imgflip.com/caption_image",
+	    type:"POST",
+	    data: {template_id: "61579",username: "maymays", password:"maymays",text0: "One does not simply",text1: "Make a chrome extension"},
+	    dataType: "json",
+	    success: function (result){
+		console.log(result.data.url);
+		switch (result.success){
+		case true:
+		    $('#output').val(result.data.url);
+		    break;
+		default:
+		    resultDiv.html(result);
+		}
+	    },
+	    error: function(xhr,ajaxOptions, thrownError){
+		alert(xhr.status);
+		alert(thrownError);
+	    }
+	})
+    });
+});
